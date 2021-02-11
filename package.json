@@ -12,6 +12,7 @@
     "next-pwa": "^5.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-unity-webgl": "^8.0.3",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
