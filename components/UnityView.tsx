@@ -5,9 +5,8 @@ export default function UnityView() {
   const height = use100vh();
 
   /**
-   * Force client-side rendering
-   *
-   * Do not render until ready
+   * - Force client-side rendering
+   * - Do not render until ready
    */
   if (!process.browser && !height) {
     return null;
@@ -21,21 +20,19 @@ export default function UnityView() {
   });
 
   return (
-    <>
-      <div style={{ height, width: "100%" }}>
-        <Unity
-          unityContext={unityContext}
-          width="100%"
-          height="100%"
-          className="unity"
-        />
-        <style jsx>{`
-          .unity {
-            height: 100%;
-            width: 100%;
-          }
-        `}</style>
-      </div>
-    </>
+    <div style={{ height, width: "100%" }}>
+      <Unity
+        unityContext={unityContext}
+        width="100%"
+        height="100%"
+        className="unity"
+      />
+      <style jsx>{`
+        .unity {
+          height: 100%;
+          width: 100%;
+        }
+      `}</style>
+    </div>
   );
 }
