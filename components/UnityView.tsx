@@ -4,6 +4,11 @@ import { use100vh } from "react-div-100vh";
 export default function UnityView() {
   const height = use100vh();
 
+  /**
+   * Force client-side rendering
+   *
+   * Do not render until ready
+   */
   if (!process.browser && !height) {
     return null;
   }
