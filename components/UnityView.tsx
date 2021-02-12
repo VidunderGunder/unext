@@ -1,9 +1,8 @@
 import Unity, { UnityContext } from "react-unity-webgl";
-import Div100vh from "react-div-100vh";
+import { use100vh } from "react-div-100vh";
 
 export default function UnityView() {
-  // const width = "100%";
-  // const height = use100vh();
+  const height = use100vh();
 
   const unityContext = new UnityContext({
     loaderUrl: "build/build.loader.js",
@@ -13,19 +12,23 @@ export default function UnityView() {
   });
 
   return (
-    <Div100vh>
-      <Unity
-        unityContext={unityContext}
-        width="100%"
-        height="100%"
-        className="unity"
-      />
-      <style jsx>{`
-        .unity {
-          height: 100%;
-          width: 100%;
-        }
-      `}</style>
-    </Div100vh>
+    <>
+      {process.browser && height && (
+        <div style={{ height, width: "100%" }}>
+          <Unity
+            unityContext={unityContext}
+            width="100%"
+            height="100%"
+            className="unity"
+          />
+          <style jsx>{`
+            .unity {
+              height: 100%;
+              width: 100%;
+            }
+          `}</style>
+        </div>
+      )}
+    </>
   );
 }
