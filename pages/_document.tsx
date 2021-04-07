@@ -17,6 +17,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* App */}
           <meta name="application-name" content={`${manifest.name}`} />
 
           <meta name="apple-mobile-web-app-capable" content={`yes`} />
@@ -38,6 +39,17 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+          {/* Social */}
+          <meta property="og:url" content="https://unext-pi.vercel.app/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Autonomous Forklift" />
+          <meta name="twitter:card" content="Autonomous Forklift" />
+          <meta
+            property="og:description"
+            content="PWA with a simple AI-simulation using Unity and Next.js."
+          />
+          <meta property="og:image" content={"/social-preview.png"} />
         </Head>
         <body>
           <Main />
