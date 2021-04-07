@@ -20,12 +20,14 @@ export default function UnityView() {
   });
 
   return (
-    <div style={{ height, width: "100%" }}>
+    <div style={{ height: "100%", width: "100%" }}>
       <Unity
         unityContext={unityContext}
-        width="100%"
-        height="100%"
         className="unity"
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
       />
       <style jsx>{`
         .unity {
